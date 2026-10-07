@@ -1,0 +1,15 @@
+{
+  "fileKey": "5QsiZgkUNJgIjEXt6nezd0",
+  "pageId": "0:1",
+  "boardId": "16:48",
+  "screenIds": ["16:67", "16:77", "16:104", "16:114"],
+  "controlsId": "16:49",
+  "imageIds": ["16:141", "16:164", "16:202", "16:247"],
+  "status": "created and visually verified",
+  "screenSize": [356, 892],
+  "editableTextNodes": 66,
+  "font": "SF Pro",
+  "reference": "assets/screen_images/Login,Main.png",
+  "illustrations": "Login reuses splash.png; discovery and connect illustrations were isolated using built-in imagegen. Alex avatar is a Figma image crop of the supplied reference.",
+  "finalAdjustments": "Gmail description width 320 and font 15.5; price labels width 74 at x 211; manual label x 96 and width 218 at size 14; assurance label size 12 and width 110; savings suffix x 123 at size 11; discovery image 420x350 at -32,139 moved beneath header text; inactive navigation icons gray."
+}

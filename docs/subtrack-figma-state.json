@@ -1,0 +1,25 @@
+{
+  "fileKey": "5QsiZgkUNJgIjEXt6nezd0",
+  "pageId": "0:1",
+  "boardId": "6:281",
+  "screenIds": [
+    "6:298",
+    "6:308",
+    "6:320",
+    "6:332"
+  ],
+  "controlsFrameId": "6:282",
+  "status": "created and visually verified",
+  "boardSize": [
+    1536,
+    1024
+  ],
+  "screenSize": [
+    350,
+    858
+  ],
+  "font": "SF Pro",
+  "editableTextNodes": 20,
+  "rasterImageNodes": 4,
+  "finalAdjustments": "Four drawn hero illustrations replaced with PNG IMAGE fills above the existing text. Image node IDs: 10:48, 10:49, 10:50, 10:51. FIT mode preserves full illustrations."
+}

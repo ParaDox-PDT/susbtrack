@@ -1,0 +1,12 @@
+{
+  "fileKey": "5QsiZgkUNJgIjEXt6nezd0",
+  "boardId": "18:121",
+  "boardName": "SubTrack / Subscriptions & Details",
+  "screenIds": ["18:560", "18:561", "18:562"],
+  "screenNames": ["08 / Subscriptions", "09 / Spotify subscription details", "10 / Add subscription"],
+  "size": [356, 920],
+  "creationMethod": "Editable SVG import through Figma browser editor",
+  "source": "docs/subtrack-subscriptions.svg",
+  "preview": "docs/subtrack-subscriptions-figma-preview.jpg",
+  "homeDashboardRepeated": false
+}

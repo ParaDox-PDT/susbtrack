@@ -1,0 +1,422 @@
+[
+  {
+    "index": 1,
+    "name": "01 / Gmail access & scan recovery",
+    "filename": "subtrack-flow-01.svg",
+    "position": [
+      200,
+      5040
+    ],
+    "screens": [
+      {
+        "number": 15,
+        "name": "Confirm Gmail account",
+        "layerName": "15 Confirm Gmail account",
+        "tab": null
+      },
+      {
+        "number": 16,
+        "name": "Gmail permission declined",
+        "layerName": "16 Gmail permission declined",
+        "tab": null
+      },
+      {
+        "number": 17,
+        "name": "Scan interrupted",
+        "layerName": "17 Scan interrupted",
+        "tab": null
+      },
+      {
+        "number": 18,
+        "name": "No subscriptions found",
+        "layerName": "18 No subscriptions found",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 2,
+    "name": "02 / Review, merge & import outcomes",
+    "filename": "subtrack-flow-02.svg",
+    "position": [
+      1900,
+      5040
+    ],
+    "screens": [
+      {
+        "number": 19,
+        "name": "Verify detected subscription",
+        "layerName": "19 Verify detected subscription",
+        "tab": null
+      },
+      {
+        "number": 20,
+        "name": "Resolve duplicate subscription",
+        "layerName": "20 Resolve duplicate subscription",
+        "tab": null
+      },
+      {
+        "number": 21,
+        "name": "Import completed",
+        "layerName": "21 Import completed",
+        "tab": null
+      },
+      {
+        "number": 22,
+        "name": "Confirm detected cancellation",
+        "layerName": "22 Confirm detected cancellation",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 3,
+    "name": "03 / Manual entry selection sheets",
+    "filename": "subtrack-flow-03.svg",
+    "position": [
+      200,
+      6260
+    ],
+    "screens": [
+      {
+        "number": 23,
+        "name": "Service catalog",
+        "layerName": "23 Service catalog",
+        "tab": null
+      },
+      {
+        "number": 24,
+        "name": "Category selection",
+        "layerName": "24 Category selection",
+        "tab": null
+      },
+      {
+        "number": 25,
+        "name": "Billing cycle selection",
+        "layerName": "25 Billing cycle selection",
+        "tab": null
+      },
+      {
+        "number": 26,
+        "name": "Currency selection",
+        "layerName": "26 Currency selection",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 4,
+    "name": "04 / Entry validation & saving",
+    "filename": "subtrack-flow-04.svg",
+    "position": [
+      1900,
+      6260
+    ],
+    "screens": [
+      {
+        "number": 27,
+        "name": "Payment method selection",
+        "layerName": "27 Payment method selection",
+        "tab": null
+      },
+      {
+        "number": 28,
+        "name": "Renewal date picker",
+        "layerName": "28 Renewal date picker",
+        "tab": null
+      },
+      {
+        "number": 29,
+        "name": "Manual form validation",
+        "layerName": "29 Manual form validation",
+        "tab": null
+      },
+      {
+        "number": 30,
+        "name": "Subscription saved",
+        "layerName": "30 Subscription saved",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 5,
+    "name": "05 / Calendar & payment history",
+    "filename": "subtrack-flow-05.svg",
+    "position": [
+      200,
+      7480
+    ],
+    "screens": [
+      {
+        "number": 31,
+        "name": "Upcoming payments",
+        "layerName": "31 Upcoming payments",
+        "tab": null
+      },
+      {
+        "number": 32,
+        "name": "Payment record",
+        "layerName": "32 Payment record",
+        "tab": null
+      },
+      {
+        "number": 33,
+        "name": "Subscription payments tab",
+        "layerName": "33 Subscription payments tab",
+        "tab": null
+      },
+      {
+        "number": 34,
+        "name": "Record a payment",
+        "layerName": "34 Record a payment",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 6,
+    "name": "06 / Subscription lifecycle & search",
+    "filename": "subtrack-flow-06.svg",
+    "position": [
+      1900,
+      7480
+    ],
+    "screens": [
+      {
+        "number": 35,
+        "name": "Cancellation guide",
+        "layerName": "35 Cancellation guide",
+        "tab": null
+      },
+      {
+        "number": 36,
+        "name": "Cancelled subscription",
+        "layerName": "36 Cancelled subscription",
+        "tab": null
+      },
+      {
+        "number": 37,
+        "name": "Delete subscription confirmation",
+        "layerName": "37 Delete subscription confirmation",
+        "tab": null
+      },
+      {
+        "number": 38,
+        "name": "Search and trial states",
+        "layerName": "38 Search and trial states",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 7,
+    "name": "07 / Insights, savings & price changes",
+    "filename": "subtrack-flow-07.svg",
+    "position": [
+      200,
+      8700
+    ],
+    "screens": [
+      {
+        "number": 39,
+        "name": "Insights overview",
+        "layerName": "39 Insights overview",
+        "tab": "Insights"
+      },
+      {
+        "number": 40,
+        "name": "Potentially unused review",
+        "layerName": "40 Potentially unused review",
+        "tab": null
+      },
+      {
+        "number": 41,
+        "name": "Price change review",
+        "layerName": "41 Price change review",
+        "tab": null
+      },
+      {
+        "number": 42,
+        "name": "Category spending detail",
+        "layerName": "42 Category spending detail",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 8,
+    "name": "08 / Profile, Gmail connections & preferences",
+    "filename": "subtrack-flow-08.svg",
+    "position": [
+      1900,
+      8700
+    ],
+    "screens": [
+      {
+        "number": 43,
+        "name": "Profile",
+        "layerName": "43 Profile",
+        "tab": "Profile"
+      },
+      {
+        "number": 44,
+        "name": "Connected accounts",
+        "layerName": "44 Connected accounts",
+        "tab": null
+      },
+      {
+        "number": 45,
+        "name": "Disconnect Gmail confirmation",
+        "layerName": "45 Disconnect Gmail confirmation",
+        "tab": null
+      },
+      {
+        "number": 46,
+        "name": "Preferences",
+        "layerName": "46 Preferences",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 9,
+    "name": "09 / Alerts, reminder timing & privacy",
+    "filename": "subtrack-flow-09.svg",
+    "position": [
+      200,
+      9920
+    ],
+    "screens": [
+      {
+        "number": 47,
+        "name": "Notification inbox",
+        "layerName": "47 Notification inbox",
+        "tab": null
+      },
+      {
+        "number": 48,
+        "name": "Reminder timing selection",
+        "layerName": "48 Reminder timing selection",
+        "tab": null
+      },
+      {
+        "number": 49,
+        "name": "Notifications unavailable",
+        "layerName": "49 Notifications unavailable",
+        "tab": null
+      },
+      {
+        "number": 50,
+        "name": "Privacy and data controls",
+        "layerName": "50 Privacy and data controls",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 10,
+    "name": "10 / Offline, save errors & account exits",
+    "filename": "subtrack-flow-10.svg",
+    "position": [
+      1900,
+      9920
+    ],
+    "screens": [
+      {
+        "number": 51,
+        "name": "Offline state",
+        "layerName": "51 Offline state",
+        "tab": null
+      },
+      {
+        "number": 52,
+        "name": "Save failed recovery",
+        "layerName": "52 Save failed recovery",
+        "tab": null
+      },
+      {
+        "number": 53,
+        "name": "Sign out confirmation",
+        "layerName": "53 Sign out confirmation",
+        "tab": null
+      },
+      {
+        "number": 54,
+        "name": "Delete account confirmation",
+        "layerName": "54 Delete account confirmation",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 11,
+    "name": "11 / Form completion, custom service & sign-in recovery",
+    "filename": "subtrack-flow-11.svg",
+    "position": [
+      200,
+      11140
+    ],
+    "screens": [
+      {
+        "number": 55,
+        "name": "Completed manual subscription",
+        "layerName": "55 Completed manual subscription",
+        "tab": null
+      },
+      {
+        "number": 56,
+        "name": "Custom service entry",
+        "layerName": "56 Custom service entry",
+        "tab": null
+      },
+      {
+        "number": 57,
+        "name": "No search results",
+        "layerName": "57 No search results",
+        "tab": null
+      },
+      {
+        "number": 58,
+        "name": "Sign-in recovery",
+        "layerName": "58 Sign-in recovery",
+        "tab": null
+      }
+    ]
+  },
+  {
+    "index": 12,
+    "name": "12 / Account details & connected-state variants",
+    "filename": "subtrack-flow-12.svg",
+    "position": [
+      1900,
+      11140
+    ],
+    "screens": [
+      {
+        "number": 59,
+        "name": "Account details",
+        "layerName": "59 Account details",
+        "tab": null
+      },
+      {
+        "number": 60,
+        "name": "Gmail disconnected state",
+        "layerName": "60 Gmail disconnected state",
+        "tab": null
+      },
+      {
+        "number": 61,
+        "name": "Empty notification inbox",
+        "layerName": "61 Empty notification inbox",
+        "tab": null
+      },
+      {
+        "number": 62,
+        "name": "Session renewal",
+        "layerName": "62 Session renewal",
+        "tab": null
+      }
+    ]
+  }
+]

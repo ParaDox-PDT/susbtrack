@@ -1,0 +1,13 @@
+{
+  "fileKey": "5QsiZgkUNJgIjEXt6nezd0",
+  "boardId": "18:565",
+  "boardName": "SubTrack / Scan, Review, Edit & Notifications",
+  "position": [200, 3820],
+  "screenIds": ["18:1061", "18:1062", "18:1063", "18:1064"],
+  "screenNames": ["11 / Gmail scanning", "12 / Review found subscriptions", "13 / Edit Spotify subscription", "14 / Notifications settings"],
+  "screenSize": [356, 920],
+  "source": "docs/subtrack-detail-screens-import.svg",
+  "preview": "docs/subtrack-detail-figma-preview.jpg",
+  "staticAssets": ["assets/onboarding/gmail-scan-hero.jpg", "assets/onboarding/notification-bell.jpg"],
+  "method": "Native SVG clipboard import through Figma browser editor"
+}
