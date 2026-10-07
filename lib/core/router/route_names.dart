@@ -6,6 +6,8 @@ class RouteNames {
   static const String initial = '/';
   static const String onboarding = '/onboarding';
   static const String login = '/login';
+  static const String discovery = '/discovery';
+  static const String connectGmail = '/connect-gmail';
   static const String home = '/home';
   static const String subscriptions = '/subscriptions';
   static const String subscriptionDetail = '/subscriptions/:id';
@@ -17,6 +19,8 @@ class RouteNames {
   static const String initialName = 'initial';
   static const String onboardingName = 'onboarding';
   static const String loginName = 'login';
+  static const String discoveryName = 'discovery';
+  static const String connectGmailName = 'connect_gmail';
   static const String homeName = 'home';
   static const String subscriptionsName = 'subscriptions';
   static const String subscriptionDetailName = 'subscription_detail';

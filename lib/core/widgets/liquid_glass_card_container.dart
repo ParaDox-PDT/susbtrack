@@ -11,6 +11,8 @@ class LiquidGlassContainer extends StatelessWidget {
   final VoidCallback? onTap;
   final double? width;
   final double? height;
+  final BoxBorder? border;
+  final Color? color;
 
   const LiquidGlassContainer({
     super.key,
@@ -21,6 +23,8 @@ class LiquidGlassContainer extends StatelessWidget {
     this.onTap,
     this.width,
     this.height,
+    this.border,
+    this.color,
   });
 
   @override
@@ -37,6 +41,11 @@ class LiquidGlassContainer extends StatelessWidget {
         width: width,
         height: height,
         padding: padding,
+        decoration: BoxDecoration(
+          color: color ?? Colors.white.withValues(alpha: 0.6),
+          borderRadius: BorderRadius.circular(borderRadius),
+          border: border,
+        ),
         child: child,
       ),
     );
