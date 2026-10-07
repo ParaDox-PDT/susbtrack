@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import '../../features/analytics/presentation/pages/analytics_screen.dart';
+import '../../features/auth/presentation/pages/login_screen.dart';
+import '../../features/onboarding/presentation/pages/onboarding_flow_screen.dart';
+import '../../features/onboarding/presentation/pages/splash_screen.dart';
+import '../../features/settings/presentation/pages/settings_screen.dart';
+import '../../features/subscriptions/presentation/pages/add_subscription_screen.dart';
+import '../../features/subscriptions/presentation/pages/home_dashboard_screen.dart';
+import '../../features/subscriptions/presentation/pages/subscription_detail_screen.dart';
+import '../../features/subscriptions/presentation/pages/subscriptions_list_screen.dart';
 import 'route_names.dart';
 
-/// Central GoRouter configuration for SubTrack.
-/// Routes are mapped architecturally and can be replaced with real screen widgets
-/// once the presentation UI layer is implemented.
+/// Central GoRouter configuration for SubTrack connecting all real screens.
 class AppRouter {
   AppRouter._();
 
@@ -14,44 +22,44 @@ class AppRouter {
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
     initialLocation: RouteNames.initial,
-    debugLogDiagnostics: true,
+    debugLogDiagnostics: false,
     routes: [
       GoRoute(
         path: RouteNames.initial,
         name: RouteNames.initialName,
-        builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Initial / Splash'),
+        builder: (context, state) => const SplashScreen(),
       ),
       GoRoute(
         path: RouteNames.onboarding,
         name: RouteNames.onboardingName,
-        builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Onboarding'),
+        builder: (context, state) => const OnboardingFlowScreen(),
       ),
       GoRoute(
         path: RouteNames.login,
         name: RouteNames.loginName,
-        builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Login'),
+        builder: (context, state) => const LoginScreen(),
       ),
       GoRoute(
         path: RouteNames.home,
         name: RouteNames.homeName,
-        builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Home / Dashboard'),
+        builder: (context, state) => const HomeDashboardScreen(),
       ),
       GoRoute(
         path: RouteNames.subscriptions,
         name: RouteNames.subscriptionsName,
-        builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Subscriptions List'),
+        builder: (context, state) => const SubscriptionsListScreen(),
         routes: [
           GoRoute(
             path: 'add',
             name: RouteNames.addSubscriptionName,
-            builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Add Subscription'),
+            builder: (context, state) => const AddSubscriptionScreen(),
           ),
           GoRoute(
             path: ':id',
             name: RouteNames.subscriptionDetailName,
             builder: (context, state) {
               final id = state.pathParameters['id'] ?? '';
-              return _ArchitecturePlaceholderScreen(title: 'Subscription Detail ($id)');
+              return SubscriptionDetailScreen(subscriptionId: id);
             },
           ),
         ],
@@ -59,35 +67,18 @@ class AppRouter {
       GoRoute(
         path: RouteNames.analytics,
         name: RouteNames.analyticsName,
-        builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Analytics & Insights'),
+        builder: (context, state) => const AnalyticsScreen(),
       ),
       GoRoute(
         path: RouteNames.settings,
         name: RouteNames.settingsName,
-        builder: (context, state) => const _ArchitecturePlaceholderScreen(title: 'Settings'),
+        builder: (context, state) => const SettingsScreen(),
       ),
     ],
-    errorBuilder: (context, state) => _ArchitecturePlaceholderScreen(
-      title: 'Page Not Found: ${state.uri}',
+    errorBuilder: (context, state) => Scaffold(
+      body: Center(
+        child: Text('Page not found: ${state.uri}'),
+      ),
     ),
   );
-}
-
-/// Minimal architectural placeholder widget ensuring router integrity
-/// without defining actual UI screens until requested.
-class _ArchitecturePlaceholderScreen extends StatelessWidget {
-  final String title;
-  const _ArchitecturePlaceholderScreen({required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-      ),
-    );
-  }
 }

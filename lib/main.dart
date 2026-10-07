@@ -3,6 +3,8 @@ import 'dart:developer' as developer;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:g1455/g1455.dart';
+
 import 'app.dart';
 import 'core/di/injection_container.dart';
 import 'core/utils/bloc_observer.dart';
@@ -17,6 +19,13 @@ void main() async {
 
       // Initialize Dependency Injection
       await initDependencies();
+
+      // Precompile liquid glass shaders for zero-frame latency
+      try {
+        await GlassHost.precache();
+      } catch (e) {
+        developer.log('GlassHost precache notice: $e', name: 'SubTrackApp');
+      }
 
       // Run application
       runApp(const SubTrackApp());

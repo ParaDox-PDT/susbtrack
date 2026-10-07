@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:g1455/g1455.dart';
+
 import 'core/constants/app_constants.dart';
 import 'core/di/injection_container.dart';
 import 'core/router/app_router.dart';
@@ -46,6 +48,11 @@ class SubTrackApp extends StatelessWidget {
             darkTheme: AppTheme.darkTheme,
             themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
             routerConfig: AppRouter.router,
+            builder: (context, child) => GlassHost(
+              richBackdrop: true,
+              minLabelContrast: kTextContrastAA,
+              child: child!,
+            ),
           );
         },
       ),

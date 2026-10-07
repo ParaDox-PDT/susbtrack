@@ -1,0 +1,108 @@
+name: Checks
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Analyze and test (Flutter ${{ matrix.name }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write # Codecov's upload authenticates by OIDC, not a secret
+    strategy:
+      fail-fast: false
+      matrix:
+        # The floor the pubspec declares, and whatever stable is today (an
+        # empty version is the channel's latest).
+        include:
+          - name: '3.47'
+            version: '3.47.x'
+          - name: stable
+            version: ''
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ matrix.version }}
+          cache: true
+
+      - name: Versions
+        run: flutter --version
+
+      - name: Get dependencies
+        run: |
+          flutter pub get
+          (cd example && flutter pub get)
+
+      # Width and trailing commas come from analysis_options.yaml.
+      - name: Format
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze
+        run: flutter analyze --fatal-infos --fatal-warnings
+
+      - name: Analyze example
+        working-directory: example
+        run: flutter analyze --fatal-infos --fatal-warnings
+
+      - name: Test
+        run: flutter test --coverage --reporter=github
+
+      # Plays every showcase loop headless and checks each meets itself at the
+      # seam, so a change that breaks the README's animations fails here.
+      - name: Test example
+        working-directory: example
+        run: flutter test test/ showcase/ --reporter=github
+
+      - name: Upload coverage
+        if: matrix.name == 'stable'
+        uses: codecov/codecov-action@v7
+        with:
+          files: coverage/lcov.info
+          use_oidc: true
+          # A fork's pull request gets no OIDC token; its upload is skipped
+          # rather than failing the checks.
+          fail_ci_if_error: false
+
+      - name: Publish dry run
+        run: flutter pub publish --dry-run
+
+  pana:
+    name: Package score
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      # pana reads the screenshots with libwebp's tools; without them every
+      # screenshot is "No such file or directory" and the example's 10 points go.
+      - name: Install pana
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq webp
+          dart pub global activate pana
+
+      # Fails on any point lost. pana scores what `pub publish` would upload.
+      # Run after the repository exists on GitHub: pana checks `repository`.
+      - name: Run pana
+        run: dart pub global run pana --no-warning --exit-code-threshold 0 .
