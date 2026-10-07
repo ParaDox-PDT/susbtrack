@@ -19,6 +19,28 @@ class AppRouter {
   static final GlobalKey<NavigatorState> rootNavigatorKey =
       GlobalKey<NavigatorState>(debugLabel: 'root');
 
+  static CustomTransitionPage<void> _fadePage({
+    required GoRouterState state,
+    required Widget child,
+    Duration duration = const Duration(milliseconds: 600),
+  }) {
+    return CustomTransitionPage<void>(
+      key: state.pageKey,
+      child: child,
+      transitionDuration: duration,
+      reverseTransitionDuration: duration,
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return FadeTransition(
+          opacity: CurvedAnimation(
+            parent: animation,
+            curve: Curves.easeInOut,
+          ),
+          child: child,
+        );
+      },
+    );
+  }
+
   static final GoRouter router = GoRouter(
     navigatorKey: rootNavigatorKey,
     initialLocation: RouteNames.initial,
@@ -32,12 +54,18 @@ class AppRouter {
       GoRoute(
         path: RouteNames.onboarding,
         name: RouteNames.onboardingName,
-        builder: (context, state) => const OnboardingFlowScreen(),
+        pageBuilder: (context, state) => _fadePage(
+          state: state,
+          child: const OnboardingFlowScreen(),
+        ),
       ),
       GoRoute(
         path: RouteNames.login,
         name: RouteNames.loginName,
-        builder: (context, state) => const LoginScreen(),
+        pageBuilder: (context, state) => _fadePage(
+          state: state,
+          child: const LoginScreen(),
+        ),
       ),
       GoRoute(
         path: RouteNames.home,
